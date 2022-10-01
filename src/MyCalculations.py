@@ -1,28 +1,31 @@
 from Types import DataType
 
 
+def RightScores(scores):
+    isRightScores = True
+    for itemScores in scores:
+        if itemScores != 90:
+            isRightScores = False
+    return isRightScores
+
+
+def GetStudentScores(student):
+    items = student[1]
+    scores = []
+    for item in items:
+        scores.append(item[1])
+    return scores
+
+
 class MyCalculations:
 
     def __init__(self, data: DataType) -> None:
         self.data: DataType = data
 
-    def GetStudentScores(self, studentNumber):
-        student = list(self.data[studentNumber].values())
-        scores = list(student[0].values())
-        return scores
-
-    def RightScores(self, studentNumber):
-        scores = MyCalculations.GetStudentScores(self, studentNumber)
-        isRightScores = True
-        for itemScores in scores:
-            if itemScores != 90:
-                isRightScores = False
-        return isRightScores
-
     def GetRightStudent(self):
         rightStudent = ""
-        for studentNumber in range(len(self.data)):
-            if MyCalculations.RightScores(self, studentNumber):
-                student = list(self.data[studentNumber].keys())
-                rightStudent = str(student[0])
+        for student in self.data.items():
+            scores = GetStudentScores(student)
+            if RightScores(scores):
+                rightStudent = student[0]
         return rightStudent
