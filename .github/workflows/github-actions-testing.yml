@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - branchMyDataReader
 
 jobs:
   build:
