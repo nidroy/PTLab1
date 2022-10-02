@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - branchMyDataReader
+      - branchMyCalculations
 
 jobs:
   build:
