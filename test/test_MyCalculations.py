@@ -11,7 +11,8 @@ RightScoresType = bool
 class TestMyCalculations:
 
     @pytest.fixture()
-    def input_data(self) -> tuple[DataType, RightStudentType, ScoresType, RightScoresType]:
+    def input_data(self) -> tuple[DataType, RightStudentType,
+                                  ScoresType, RightScoresType]:
         data: DataType = {
             "Абрамов Петр Сергеевич":
                 [
@@ -35,22 +36,25 @@ class TestMyCalculations:
 
         return data, rightStudent, scores, rightScores
 
-    def test_init_MyCalculations(self, input_data: tuple[DataType, RightStudentType, ScoresType, RightScoresType]) \
-            -> None:
+    def test_init_MyCalculations(self, input_data: tuple
+    [DataType, RightStudentType, ScoresType, RightScoresType]) -> None:
         myCalculations = MyCalculations(input_data[0])
         assert input_data[0] == myCalculations.data
 
-    def test_GetRightStudent(self, input_data: tuple[DataType, RightStudentType, ScoresType, RightScoresType]) -> None:
+    def test_GetRightStudent(self, input_data: tuple
+    [DataType, RightStudentType, ScoresType, RightScoresType]) -> None:
         rightStudent = MyCalculations(input_data[0]).GetRightStudent()
         assert input_data[1] == rightStudent
 
-    def test_GetStudentScores(self, input_data: tuple[DataType, RightStudentType, ScoresType, RightScoresType]) -> None:
+    def test_GetStudentScores(self, input_data: tuple
+    [DataType, RightStudentType, ScoresType, RightScoresType]) -> None:
         students = list(input_data[0].items())
         student = students[0]
         scores = GetStudentScores(student)
         assert input_data[2] == scores
 
-    def test_RightScores(self, input_data: tuple[DataType, RightStudentType, ScoresType, RightScoresType]) -> None:
+    def test_RightScores(self, input_data: tuple
+    [DataType, RightStudentType, ScoresType, RightScoresType]) -> None:
         students = list(input_data[0].items())
         student = students[0]
         scores = GetStudentScores(student)
