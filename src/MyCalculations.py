@@ -1,7 +1,7 @@
 from Types import DataType
 
 
-def RightScores(scores):
+def RightScores(scores) -> bool:
     isRightScores = True
     for itemScores in scores:
         if itemScores != 90:
@@ -9,7 +9,7 @@ def RightScores(scores):
     return isRightScores
 
 
-def GetStudentScores(student):
+def GetStudentScores(student) -> list:
     items = student[1]
     scores = []
     for item in items:
@@ -22,7 +22,7 @@ class MyCalculations:
     def __init__(self, data: DataType) -> None:
         self.data: DataType = data
 
-    def GetRightStudent(self):
+    def GetRightStudent(self) -> str:
         rightStudent = ""
         for student in self.data.items():
             scores = GetStudentScores(student)
