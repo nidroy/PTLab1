@@ -4,7 +4,7 @@ from MyCalculations import MyCalculations, GetStudentScores, RightScores
 from Types import DataType
 
 RightStudentType = str
-ScoresType = []
+ScoresType = list
 RightScoresType = bool
 
 
