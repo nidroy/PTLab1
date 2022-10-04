@@ -3,10 +3,6 @@ import pytest
 from MyCalculations import MyCalculations, GetStudentScores, RightScores
 from Types import DataType
 
-#RightStudentType = str
-#ScoresType = list
-#RightScoresType = bool
-
 
 class TestMyCalculations:
 
